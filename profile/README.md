@@ -14,7 +14,9 @@ This initiative aims to group the botanical specimen data mediated by GBIF into 
 
 Georeferencing is a complex and expert process, expensive to implement at scale. Post-accession georeferencing is often done as a step in a scientific analysis, which if scoped by taxon (for example for conservation assessment), can lose the context in which the collecting event was made. 
 Herbarium mass digitisation projects have captured a lot of data about the collecting events associated with herbarium specimens, sometimes with textual descriptions of localities, sometimes with lat/long coordinates.
+
 As botanical collecting events were conducted by a person (primary collector) who assigned a sequential collecting number to their field work, we can organise the work of an individual collector in its correct sequence. This recovers valuable context for the interpretation of textual locality descriptions, as adjacent collecting events are more likely to be conducted in closeby localities.
+
 The [Bionomia](https://bionomia.net) project has labelled specimen data from GBIF with precise collector (and identifier) identity. Here, we do not attempt to determine a single identity for the complete career of a collector (as we are motivated primarily by simplifying georeferencing, it is enough for us to group collecting trips) - but it is possible for us to post updates to Bionomia to attribute all specimens from a particular collecting trip to the primary collector. An estimation of the number of updates that could be made to Bionomia is made as part of each processing run.
 
 ## Examples
@@ -88,7 +90,7 @@ Verify the LLM results with comparison to known data and/or review by the actual
 
 The idea that “we need a Bionomia for georeferencing”, expressed informally in community discussions, captures a broader need to apply similar approaches to locality data at scale. This project addresses that need by reconstructing collecting trips from occurrence records, enabling locality descriptions to be interpreted in context rather than in isolation.
 
-We named this project geonomia to reflect its alignment with Bionomia, extending the string-to-thing approach from people to places, and contributing new contextual structure to support both georeferencing and collector attribution.
+We named this project *geonomia* to reflect its alignment with Bionomia, extending the string-to-thing approach from people to places, and contributing new contextual structure to support both georeferencing and collector attribution.
 
 ## Contributing
 

@@ -21,9 +21,9 @@ The [Bionomia](https://bionomia.net) project has labelled specimen data from GBI
 
 ## Examples
 
-(A scatter plot of recordNumber against eventDate for a selected familyname.)
+(A scatter plot of recordNumber against eventDate for a selected recordedBy first familyname.)
 
-(A scatter plot of recordNumber against eventDate for a selected familyname, with different collecting trip clusters indicated.)
+(A scatter plot of recordNumber against eventDate for a selected recordedBy first familyname, with different collecting trip clusters indicated.)
 
 ## Structure
 

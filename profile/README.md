@@ -6,7 +6,7 @@ The *geonomia* project produces structured representations of collecting trips d
 
 *Georeferencing* is a "string-to-thing" task, where the description of a locality specified on a collecting event must be turned into mappable coordinates. Collecting localities were visited by people moving through time and space as specimens were collected, so there is a strong relationship between the identities of the people responsible for the collecting event (listed in recordedBy), and the localities that they visited as they conducted their fieldwork. 
 
-Precise localities are important as they enable species presence to be mapped in time and space, essential for species distribution mapping and conservation assessments. Also, as GBIF supports spatial querying of the occurrence data in its data portal, a spatial polygon is the part of the download criteria for x% of downloads used in scientific analyses. (todo calculate).
+Precise localities are important as they enable species presence to be mapped in time and space, essential for species distribution mapping and conservation assessments. Also, as GBIF supports spatial querying of the occurrence data in its data portal, a spatial polygon is the part of the download criteria for c two thirds of downloads used in scientific analyses. (See analytical code at <a href="https://github.com/geonomia/geonomia-gbif-rationale">Geonomia GBIF rationale</a>).
 
 This initiative aims to group the botanical specimen data mediated by GBIF into collecting trips, so that localities visited along a collecting trip itinerary can be georeferenced together, using contributions from either the collectors themselves, or experts in the interpretation of localities for a particular region. 
 

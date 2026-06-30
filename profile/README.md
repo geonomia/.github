@@ -2,6 +2,12 @@
 
 The *geonomia* project produces structured representations of collecting trips derived from GBIF-mediated specimen occurrence data, enabling batch georeferencing through improved locality interpretation. Treating collecting trips as a unit of analysis and curation also supports clearer attribution of collecting activity.
 
+Outline:
+1. We download GBIF mediated specimen occurrence data using the [GBIF SQL download service](https://techdocs.gbif.org/en/data-use/api-sql-downloads)
+2. We prepare the data using the [Bionomia recordedby team name parser](https://github.com/bionomia/dwc_agent_golang) and apply density-based clustering ([sklearn DBSCAN](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html))to recognise collecting trips
+3. We summarise metadata about the collecting trips
+4. We publish the data online - see e.g.: the results of a process run for [botanical specimens from Malaysia](https://nickynicolson-geonomia-my-07cd456.hf.space/)
+
 ## Rationale
 
 *Georeferencing* is a "string-to-thing" task, where the description of a locality specified on a collecting event must be turned into mappable coordinates. Collecting localities were visited by people moving through time and space as specimens were collected, so there is a strong relationship between the identities of the people responsible for the collecting event (listed in recordedBy), and the localities that they visited as they conducted their fieldwork. 
@@ -31,19 +37,20 @@ The geonomia projects are organised as follows:
 
 
 - **geonomia** (organisation) - top-level information
-    - **geonomia-processor** - clustering pipeline
-    - **geonomia-web** - web interface for crowd-sourced georeferencing contributions
-    - **geonomia-service** - configuration and usage protocol for an Open Refine compatible reconciliation service to allow users to (1) locate specimen duplicates from their own datasets and (2) locate similar collecting events for help with georeferencing
-    - **geonomia-community** - Abstract submission and planning for the iDigBio "Digital Data in Biodiversity Research" conference
-    - **geonomia-gbif-rationale** - code which analyses the use of spatial features in delimiting downloads of GBIF-mediated specimen data
+    - **[geonomia-cluster](https://github.com/geonomia/geonomia-cluster)** - prepare GBIF SQL download and apply density based clustering, summarise results
+    - **[geonomia-predict](https://github.com/geonomia/geonomia-predict)** - pass clusters to LLM for summarisation
+    - **[geonomia-app](https://github.com/geonomia-app)** - Datasette web interface for exploration of results
+    - **[geonomia-explore](https://github.com/stevenpbachman/geonomia)** - Georeferencing tool
+    - **[geonomia-community](https://github.com/geonomia/geonomia-community)** - Abstract submission and planning for discussion session on the implementation of cross-institutional georeferencing and integration of results at iDigBio "Digital Data in Biodiversity Research" conference
+    - **[geonomia-gbif-rationale](https://github.com/geonomia/geonomia-gbif-rationale)** - code which analyses the use of spatial features in delimiting downloads of GBIF-mediated specimen data
 
 ## Roadmap
 
 ### In active development
-- **Crowd-sourced contributions:** integration with a web user interface to accept crowd-sourced georeferences, allowing users to comment on and verify the contributions of others (similar to iNaturalist) (Steve Bachman). [geonomia-web](https://github.com/geonomia/geonomia-web)
+- **Crowd-sourced contributions:** integration with a web user interface to accept crowd-sourced georeferences, allowing users to comment on and verify the contributions of others (similar to iNaturalist) (Steve Bachman). - **[geonomia-explore](https://github.com/stevenpbachman/geonomia)**
 
 - **Collecting event and/or collecting activity reconciliation service**
-Expose the clustered specimen occurrence data to respond to Open Refine reconciliation requests to collecting event (matching on `recordedBy_firstFamilyName` and `recordNumber`) and collecting activity (matching on `recordedBy_firstFamilyName`, `countryCode` and `eventDate`). The latter can be generalised from precise day to month. This will allow users to resolve specimen duplicates in their own datasets, and to gain a picture of which collectors were operating in time/space of interest (useful for label interpretation). A usage protocol in development with colleagues from the Forest Research Institute Malaysia. (Nicky Nicolson). [geonomia-service](https://github.com/geonomia/geonomia-service)
+Expose the clustered specimen occurrence data to respond to Open Refine reconciliation requests to collecting event (matching on `recordedBy_firstFamilyName` and `recordNumber`) and collecting activity (matching on `recordedBy_firstFamilyName`, `countryCode` and `eventDate`). The latter can be generalised from precise day to month. This will allow users to resolve specimen duplicates in their own datasets, and to gain a picture of which collectors were operating in time/space of interest (useful for label interpretation). A usage protocol in development with colleagues from the Forest Research Institute Malaysia. (Nicky Nicolson). **[geonomia-app](https://github.com/geonomia-app)**
 
 - **Evaluation metrics and community feedback** Discussion session abstract for the iDigBio online conference Digital Data in Biodiversity Research (early June 2026) (Ashleigh Whittaker).
 [geonomia-community](https://github.com/geonomia/geonomia-community)

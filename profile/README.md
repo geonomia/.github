@@ -39,7 +39,7 @@ The geonomia projects are organised as follows:
 - **geonomia** (organisation) - top-level information
     - **[geonomia-cluster](https://github.com/geonomia/geonomia-cluster)** - prepare GBIF SQL download and apply density based clustering, summarise results
     - **[geonomia-predict](https://github.com/geonomia/geonomia-predict)** - pass clusters to LLM for summarisation
-    - **[geonomia-app](https://github.com/geonomia-app)** - Datasette web interface for exploration of results
+    - **[geonomia-app](https://github.com/geonomia/geonomia-app)** - Datasette web interface for exploration of results
     - **[geonomia-explore](https://github.com/stevenpbachman/geonomia)** - Georeferencing tool
     - **[geonomia-community](https://github.com/geonomia/geonomia-community)** - Abstract submission and planning for discussion session on the implementation of cross-institutional georeferencing and integration of results at iDigBio "Digital Data in Biodiversity Research" conference
     - **[geonomia-gbif-rationale](https://github.com/geonomia/geonomia-gbif-rationale)** - code which analyses the use of spatial features in delimiting downloads of GBIF-mediated specimen data
